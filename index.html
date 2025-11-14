@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header class="app-header">
+        <div>
+          <h1>To-Do List</h1>
+          <p>Kelola tugas Anda dengan fitur lengkap</p>
+        </div>
+        <button id="toggle-theme" aria-labelledby="Ubah tema">
+          🌙 Dark Mode
+        </button>
+      </header>
+      <form id="task-form" class="task-form" autocomplete="off">
+        <div class="input-group">
+          <label for="task-desc">Tugas Baru</label>
+          <input
+            type="text"
+            id="task-desc"
+            placeholder="Apa yang perlu dilakukan?"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="task-priority">Prioritas</label>
+          <select id="task-priority">
+            <option value="Rendah">Rendah</option>
+            <option value="Sedang">Sedang</option>
+            <option value="Tinggi">Tinggi</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="task-category">Kategori</label>
+          <select id="task-category">
+            <option value="Pribadi">Pribadi</option>
+            <option value="Pekerjaan">Pekerjaan</option>
+            <option value="Belanja">Belanja</option>
+            <option value="Kesehatan">Kesehatan</option>
+            <option value="Lainnya">Lainnya</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="task-deadline">Deadline</label>
+          <input type="datetime-local" id="task-deadline" />
+        </div>
+        <button type="submit" class="btn-add">Tambah Tugas</button>
+      </form>
+
+      <nav class="filters">
+        <button type="button" class="filter active" data-filter="all">
+          Semua
+        </button>
+        <button type="button" class="filter" data-filter="active">Aktif</button>
+        <button type="button" class="filter" data-filter="completed">
+          Selesai
+        </button>
+        <button type="button" class="filter" data-filter="today">
+          Hari Ini
+        </button>
+        <button type="button" class="filter" data-filter="highPriority">
+          Prioritas Tinggi
+        </button>
+        <button type="button" id="clear-completed" class="btn-clear">
+          Hapus Selesai
+        </button>
+      </nav>
+
+      <section class="task-list-section">
+        <ul id="task-list" aria-live="polite"></ul>
+      </section>
+
+      <section class="stats">
+        <div>
+          <span id="stat-total" class="stat-number">0</span>
+          <span>Total Tugas</span>
+        </div>
+        <div>
+          <span id="stat-active" class="stat-number">0</span>
+          <span>Tugas Aktif</span>
+        </div>
+        <div>
+          <span id="stat-completed" class="stat-number">0</span>
+          <span>Tugas Selesai</span>
+        </div>
+        <div>
+          <span id="stat-high" class="stat-number">0</span>
+          <span>Prioritas Tinggi</span>
+        </div>
+      </section>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
